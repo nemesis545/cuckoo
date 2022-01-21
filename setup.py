@@ -11,10 +11,11 @@ import traceback
 
 
 if sys.version[0] == "3":
-    sys.exit(
-        "Cuckoo is Python2-only at the moment! Please use Python 2 to "
-        "install it, i.e., `pip2 install -U cuckoo`."
-    )
+    # sys.exit(
+        # "Cuckoo is Python2-only at the moment! Please use Python 2 to "
+        # "install it, i.e., `pip2 install -U cuckoo`."
+    # )
+    pass
 # Update the MANIFEST.in file to include the one monitor version that is
 # actively shipped for this distribution and exclude all the other monitors
 # that we have lying around. Note: I tried to do this is in a better manner
