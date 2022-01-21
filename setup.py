@@ -9,12 +9,12 @@ import setuptools
 import sys
 import traceback
 
+
 if sys.version[0] == "3":
     sys.exit(
         "Cuckoo is Python2-only at the moment! Please use Python 2 to "
         "install it, i.e., `pip2 install -U cuckoo`."
     )
-
 # Update the MANIFEST.in file to include the one monitor version that is
 # actively shipped for this distribution and exclude all the other monitors
 # that we have lying around. Note: I tried to do this is in a better manner
@@ -131,7 +131,7 @@ def do_setup(**kwargs):
         print("\x1b[31m")
         print("The following error has occurred while trying to install Cuckoo!")
         print("\x1b[0m")
-        print(traceback.format_exc())
+        print((traceback.format_exc()))
         print("\x1b[31m")
         print("Make sure that you've installed all requirements for Cuckoo ")
         print("to be installed properly! Please refer to our documentation: ")
@@ -142,7 +142,7 @@ def do_setup(**kwargs):
         print("out to us on IRC / email / Github!")
         print("\x1b[0m")
 
-        if hasattr(e, "message") and isinstance(e.message, basestring):
+        if hasattr(e, "message") and isinstance(e.message, str):
             do_help(e, e.message)
 
         exit(1)
@@ -221,13 +221,13 @@ do_setup(
     ],
     extras_require={
         ":sys_platform == 'win32'": [
-            "requests==2.13.0",
+            "requests==2.26.0",
         ],
         ":sys_platform == 'darwin'": [
-            "requests==2.13.0",
+            "requests==2.26.0",
         ],
         ":sys_platform == 'linux2'": [
-            "requests[security]==2.13.0",
+            "requests[security]==2.26.0",
             "scapy==2.3.2",
         ],
         "distributed": [
